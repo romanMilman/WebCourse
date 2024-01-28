@@ -1,131 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MTW App Template</title>
-    <!--
-        The tailwind CDN is designed for development purposes only, and is not the best choice for production.
-        Read more here: https://tailwindcss.com/docs/installation 
-    -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Lab 2 - Scientific Calculator</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- example for dark theme styling when using tailwind cdn -->
-    <!-- <style>
-        /*examples for dark/light themes*/
-        .dark .dark\:text-white {
-            color: #fff;
-        }
-        .dark .dark\:bg-gray-800 {
-            background-color: #1f2937;
-        }
-        .light .light\:text-black {
-            color: #000;
-        }
+  </head>
 
-        /*add your custom css rules here*/
-    </style> -->
+  <body>
+    <h1 class="title">Lab 2 - Scientific Calculator</h1>
 
-    <!-- For styling -->
-    <style> 
-        table { 
-            border: 1px solid black; 
-            margin-left: auto; 
-            margin-right: auto; 
-            margin-top: 100px;
-        } 
-          
-        input[type="button"] { 
-            width: 100%; 
-            padding: 20px 40px; 
-            background-color: lightgray; 
-            color: black; 
-            font-size: 24px; 
-            font-weight: bold; 
-            border: 1px solid; 
-            border-radius: 5px; 
-        } 
-          
-        input[type="text"] { 
-            padding: 20px 30px; 
-            font-size: 24px; 
-            font-weight: bold; 
-            border: none; 
-            border-radius: 5px; 
-            border: 2px solid black; 
-        } 
-    </style> 
-</head>
-
-<body class="dark:text-white light:text-black">
-
-    <!-- your app code goes here -->
-
-    <!-- Create table -->
-    <table id="calcu"> 
+    <table>
         <tr> 
-            <td colspan="3"> 
-                <input type="text" id="result"> 
-            </td> 
-            <td><input type="button" value="c"></td> 
+            <td colspan="6"><input type="text" id="result"></td> 
+        </tr>
+        <tr> 
+            <td><input type="button" value="MC"></td> 
+            <td><input type="button" value="MR"></td> 
+            <td><input type="button" value="M+"></td> 
+            <td><input type="button" value="M-"></td> 
+            <td><input type="button" value="MS"></td> 
+            <td><input type="button" value="M^+"></td> 
         </tr> 
-  
         <tr> 
+            <td colspan="2"><input type="button" value="2^nd"></td> 
+            <td><input type="button" value="π"></td> 
+            <td><input type="button" value="e"></td> 
+            <td><input type="button" value="C"></td> 
+            <td><input type="button" value="DEL"></td> 
+        </tr> 
+        <tr> 
+            <td colspan="2"><input type="button" value="X²"></td> 
             <td><input type="button" value="1"></td> 
             <td><input type="button" value="2"></td> 
             <td><input type="button" value="3"></td> 
+            <td><input type="button" value="mod"></td> 
+        </tr> 
+        <tr> 
+            <td colspan="2"><input type="button" value="√x"></td> 
+            <td><input type="button" value="("></td> 
+            <td><input type="button" value=")"></td> 
+            <td><input type="button" value="n!"></td> 
             <td><input type="button" value="/"></td> 
         </tr> 
         <tr> 
-            <td><input type="button" value="4"></td> 
-            <td><input type="button" value="5"></td> 
-            <td><input type="button" value="6"></td> 
-            <td><input type="button" value="*"></td> 
-        </tr> 
-        <tr> 
+            <td colspan="2"><input type="button" value="X^Y"></td> 
             <td><input type="button" value="7"></td> 
             <td><input type="button" value="8"></td> 
             <td><input type="button" value="9"></td> 
+            <td><input type="button" value="*"></td> 
+        </tr> 
+        <tr> 
+            <td colspan="2"><input type="button" value="10^x"></td> 
+            <td><input type="button" value="4"></td> 
+            <td><input type="button" value="5"></td> 
+            <td><input type="button" value="6"></td> 
             <td><input type="button" value="-"></td> 
         </tr> 
         <tr> 
+            <td colspan="2"><input type="button" value="log"></td> 
+            <td><input type="button" value="1"></td> 
+            <td><input type="button" value="2"></td> 
+            <td><input type="button" value="3"></td> 
+            <td><input type="button" value="+"></td> 
+        </tr> 
+        <tr> 
+            <td colspan="2"><input type="button" value="ln"></td> 
+            <td><input type="button" value="+/-"></td> 
             <td><input type="button" value="0"></td> 
             <td><input type="button" value="."></td> 
             <td><input type="button" value="="></td> 
-            <td><input type="button" value="+"></td> 
         </tr> 
-    </table> 
+    </table>
+    
 
-    </button>
+    <!-- your app code goes here -->
 
-
-    <!-- special scripts for integration in App Gallery - must be placed at the bottom of the HTML after your code -->
+    <!-- special scripts for integration in MTW gallery - must be placed at the bottom of the HTML after your code -->
     <script>
-        // custom config for the MTW app 
-        const mtwAppConfig = {
-            border: true // app border in the MTW page                    
-        }
+      // custom config for the MTW app
+      const mtwAppConfig = {
+        border: true, // app border in the MTW page
+      };
 
-        ///////////////////////////////////////////////////////
-        // implement this functions in order to use private API        
-        const sendPrivateApiRequest = async () => {
-            // your code here:
-            // sendRequestToParent({ cat: 'getAssets' })
-        }        
+      ///////////////////////////////////////////////////////
+      // implement this functions in order to use private API
+      const sendPrivateApiRequest = async () => {
+        // your code here:
+        // sendRequestToParent({ cat: 'getAssets' })
+      };
 
-        const acceptPrivateApiResponse = async (data) => {
-            // process received data here:
-            // console.log(data)
-        }
+      const acceptPrivateApiResponse = async (data) => {
+        // process received data here:
+        // console.log(data)
+      };
 
-        // use this in order to send on document load
-        document.addEventListener('DOMContentLoaded', () => {
-            // your code here:
-            //sendRequestToParent({ method: 'getAssets' })
-        })
-
+      // use this in order to send on document load
+      document.addEventListener("DOMContentLoaded", () => {
+        // your code here:
+        //sendRequestToParent({ method: 'getAssets' })
+      });
     </script>
     <script src="https://morethanwallet.com/appstore/index.js"></script>
-</body>
-
+  </body>
 </html>
