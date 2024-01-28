@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Lab 2 - Scientific Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body>
+    <h1 class="title">Lab 2 - Scientific Calculator</h1>
+
+    <table>
+        <tr> 
+            <td colspan="6"><input type="text" id="result"></td> 
+        </tr>
+        <tr> 
+            <td><input type="button" value="MC"></td> 
+            <td><input type="button" value="MR"></td> 
+            <td><input type="button" value="M+"></td> 
+            <td><input type="button" value="M-"></td> 
+            <td><input type="button" value="MS"></td> 
+            <td><input type="button" value="M^+"></td> 
+        </tr> 
+        <tr> 
+            <td colspan="2"><input type="button" value="2^nd"></td> 
+            <td><input type="button" value="π"></td> 
+            <td><input type="button" value="e"></td> 
+            <td><input type="button" value="C"></td> 
+            <td><input type="button" value="DEL"></td> 
+        </tr> 
+        <tr> 
+            <td colspan="2"><input type="button" value="X²"></td> 
+            <td><input type="button" value="1"></td> 
+            <td><input type="button" value="2"></td> 
+            <td><input type="button" value="3"></td> 
+            <td><input type="button" value="mod"></td> 
+        </tr> 
+        <tr> 
+            <td colspan="2"><input type="button" value="√x"></td> 
+            <td><input type="button" value="("></td> 
+            <td><input type="button" value=")"></td> 
+            <td><input type="button" value="n!"></td> 
+            <td><input type="button" value="/"></td> 
+        </tr> 
+        <tr> 
+            <td colspan="2"><input type="button" value="X^Y"></td> 
+            <td><input type="button" value="7"></td> 
+            <td><input type="button" value="8"></td> 
+            <td><input type="button" value="9"></td> 
+            <td><input type="button" value="*"></td> 
+        </tr> 
+        <tr> 
+            <td colspan="2"><input type="button" value="10^x"></td> 
+            <td><input type="button" value="4"></td> 
+            <td><input type="button" value="5"></td> 
+            <td><input type="button" value="6"></td> 
+            <td><input type="button" value="-"></td> 
+        </tr> 
+        <tr> 
+            <td colspan="2"><input type="button" value="log"></td> 
+            <td><input type="button" value="1"></td> 
+            <td><input type="button" value="2"></td> 
+            <td><input type="button" value="3"></td> 
+            <td><input type="button" value="+"></td> 
+        </tr> 
+        <tr> 
+            <td colspan="2"><input type="button" value="ln"></td> 
+            <td><input type="button" value="+/-"></td> 
+            <td><input type="button" value="0"></td> 
+            <td><input type="button" value="."></td> 
+            <td><input type="button" value="="></td> 
+        </tr> 
+    </table>
+    
+
+    <!-- your app code goes here -->
+
+    <!-- special scripts for integration in MTW gallery - must be placed at the bottom of the HTML after your code -->
+    <script>
+      // custom config for the MTW app
+      const mtwAppConfig = {
+        border: true, // app border in the MTW page
+      };
+
+      ///////////////////////////////////////////////////////
+      // implement this functions in order to use private API
+      const sendPrivateApiRequest = async () => {
+        // your code here:
+        // sendRequestToParent({ cat: 'getAssets' })
+      };
+
+      const acceptPrivateApiResponse = async (data) => {
+        // process received data here:
+        // console.log(data)
+      };
+
+      // use this in order to send on document load
+      document.addEventListener("DOMContentLoaded", () => {
+        // your code here:
+        //sendRequestToParent({ method: 'getAssets' })
+      });
+    </script>
+    <script src="https://morethanwallet.com/appstore/index.js"></script>
+  </body>
+</html>
